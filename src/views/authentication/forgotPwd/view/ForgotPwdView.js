@@ -47,7 +47,7 @@ export const ForgotPwdView = (props) => {
     <RootStyle title="Login">
       <MHidden width="mdDown">
         <SectionStyle>
-          <img src="/static/illustrations/illustrations_forgot_password.png" alt="login" />
+          <img src="/static/illustrations/illustration_forgot_password.png" alt="login" />
         </SectionStyle>
       </MHidden>
 
