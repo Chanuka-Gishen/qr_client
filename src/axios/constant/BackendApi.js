@@ -1,5 +1,5 @@
 // SERVER URL
-const IP_URL = 'http://16.171.17.70:3001';
+const IP_URL = 'http://13.48.148.64:3001';
 //const IP_URL = 'http://localhost:3001';
 
 // URIs
