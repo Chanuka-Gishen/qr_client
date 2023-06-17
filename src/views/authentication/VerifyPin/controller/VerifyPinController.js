@@ -77,6 +77,8 @@ const VerifyPinController = () => {
       })
         .then((res) => {
           if (responseUtil.responseIsSuccess(res.data.resCode)) {
+            const data = res.data.resData;
+            dispatch(authAction.loginUser(data));
             dispatch(authAction.updateLoginStatus());
             setIsVerifying(false);
             navigate(NAVIGATION_ROUTES.dashboard);

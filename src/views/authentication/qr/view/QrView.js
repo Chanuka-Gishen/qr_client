@@ -2,10 +2,11 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import Page from 'components/Page';
 import { MHidden } from 'components/@material-extend';
-import { Card, CardContent, Typography, CircularProgress, Container } from '@mui/material';
+import { Card, CardContent, Typography, CircularProgress, Container, Stack } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 export const QrView = (props) => {
-  const { isLoading, qrImageDataUrl } = props;
+  const { isLoading, qrImageDataUrl, checkUserStatus, isCheckingStatus } = props;
 
   const RootStyle = styled(Page)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -57,7 +58,29 @@ export const QrView = (props) => {
                     </Container>
                   ) : (
                     <>
-                      <img src={qrImageDataUrl} alt="QR Code" style={{ width: 400, height: 400 }} />
+                      <Stack spacing={2}>
+                        <img
+                          src={qrImageDataUrl}
+                          alt="QR Code"
+                          style={{ width: 400, height: 400 }}
+                        />
+                        <Stack
+                          Stack
+                          direction="row"
+                          alignItems="center"
+                          justifyContent="right"
+                          sx={{ my: 2 }}
+                        >
+                          <LoadingButton
+                            variant="text"
+                            loading={isCheckingStatus}
+                            loadingIndicator="Loading…"
+                            onClick={() => checkUserStatus()}
+                          >
+                            Check status
+                          </LoadingButton>
+                        </Stack>
+                      </Stack>
                     </>
                   )}
                 </>
